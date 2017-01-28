@@ -10,6 +10,11 @@
 	>
 
     <Grid>
-        <Label>test</Label>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="150"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Message:" FontWeight="Bold" FontSize="40" Grid.Row="0"></TextBlock>
+        <TextBlock Text="{Binding Message}" FontWeight="Bold" FontSize="72" Grid.Row="1"></TextBlock>
     </Grid>
 </UserControl>

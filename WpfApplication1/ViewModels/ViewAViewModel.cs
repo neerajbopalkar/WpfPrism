@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using WpfApplication1.Event;
 
 namespace WpfApplication1.ViewModels
 {
@@ -50,6 +51,7 @@ namespace WpfApplication1.ViewModels
         private void Execute()
         {
             LastUpdated = DateTime.Now;
+            _eventAggregator.GetEvent<UpdateEvent>().Publish(LastUpdated.ToString());
         }
         
 
