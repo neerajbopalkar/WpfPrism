@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html ng-app='githubViewer'>
+
+  <head>
+    <link rel="stylesheet" href="style.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="script.js"></script>
+	
+  </head>
+
+  <body ng-controller="MainController">
+    <h1>{{message}}</h1>
+    <h1>use firefox to render userdetails.html and avoid error in chrome and IE</h1>
+    <div ng-include="'userdetails.html'"></div>
+  </body>
+
+</html>
