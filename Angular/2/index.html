@@ -9,7 +9,19 @@
   </head>
 
   <body ng-controller="MainController">
-    <h1>Hello Plunker!</h1>
+    <h1>{{message}}</h1>
+    <div>
+    	{{error}}
+    </div>
+    <div>
+    	Name: {{user.name}}
+    </div>
+    <div>
+    Location: {{user.location}}
+    </div>
+    <div>
+    	<img src="{{user.avatar_url}} title="{{user.name}}">
+    </div>
   </body>
 
 </html>
