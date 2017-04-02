@@ -32,8 +32,12 @@ var MainController = function($scope, $http){
 		$scope.error = "Error occurred: " + reason.statusText;
 	};
 
-		$http.get("https://api.github.com/users/neerajbopalkar")
+  $scope.search = function(username){
+		$http.get("https://api.github.com/users/" + username)
 			.then(onUserComplete, onError1);
+  };
+
+  $scope.username = "angular";
 
 };
 
