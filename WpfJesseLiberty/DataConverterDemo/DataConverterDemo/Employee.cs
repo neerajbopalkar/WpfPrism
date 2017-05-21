@@ -1,15 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataBindingTwoWay
+namespace DataConverterDemo
 {
     public class Employee : INotifyPropertyChanged
     {
+        private DateTime _startDate;
+
+        public DateTime StartDate
+        {
+            get
+            {
+                return _startDate;
+            }
+
+            set
+            {
+                _startDate = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string Name
         {
@@ -30,7 +46,7 @@ namespace DataBindingTwoWay
             {
                 return _title;
             }
-            set 
+            set
             {
                 _title = value;
                 OnPropertyChanged();
@@ -42,7 +58,8 @@ namespace DataBindingTwoWay
             return new Employee()
             {
                 Name = "neeraj",
-                Title = "Developer"
+                Title = "Developer",
+                StartDate = new DateTime(2011,12,22)
             };
         }
 
@@ -62,5 +79,20 @@ namespace DataBindingTwoWay
             }
         }
 
+        public static ObservableCollection<Employee> GetEmployees()
+        {
+            return new ObservableCollection<Employee>()
+            {
+                new Employee(){ Name = "AAA", Title="111"  },
+                new Employee(){ Name = "BBB", Title="222"  },
+                new Employee(){ Name = "CCC", Title="333"  },
+                new Employee(){ Name = "DDD", Title="444"  },
+                new Employee(){ Name = "EEE", Title="555"  },
+                new Employee(){ Name = "FFF", Title="666"  },
+                new Employee(){ Name = "GGG", Title="777"  }
+            };
+
+        }
     }
+
 }
