@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DatagridDemo
+namespace TabControlDemo
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -23,8 +23,6 @@ namespace DatagridDemo
         public MainWindow()
         {
             InitializeComponent();
-            grdPresidents.ItemsSource = Employee.GetEmployees();
-            
         }
     }
 }
